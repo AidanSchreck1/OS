@@ -1,0 +1,1 @@
+savedcmd_hello-5.ko := ld -r -m elf_x86_64 --fatal-warnings -z noexecstack --no-warn-rwx-segments --build-id=sha1  -T /home/aidan/linux/scripts/module.lds -o hello-5.ko hello-5.o hello-5.mod.o .module-common.o
