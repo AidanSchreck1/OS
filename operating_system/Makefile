@@ -28,3 +28,4 @@ qemu:
 clean: 
 	make -C bootloader clean
 	make -C os clean
+	rm $(DISK_IMG)
