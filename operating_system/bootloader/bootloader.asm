@@ -2,7 +2,8 @@
 ; bootloader.asm
 ; A Simple Bootloader
 ;**********************************************
-org 0x7c00 ; origin command, sets the starting memory location for the code that follows it
+global start
+;org 0x7c00 ; origin command, sets the starting memory location for the code that follows it
 bits 16 ; tells the assembler to generate 16bit real-mode machine code
 start: jmp boot ; start is a label that is replaced with a mem adress at assemble time
 
