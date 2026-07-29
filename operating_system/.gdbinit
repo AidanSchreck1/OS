@@ -1,8 +1,8 @@
-#define hook-stop
-#	#translate the segment:offset into a physical address
-#	printf "[%4x:%4x] ", $cs, $eip
-#	x/i $cs*16+$eip
-#end
+define hook-stop
+	#translate the segment:offset into a physical address
+	printf "[%4x:%4x] ", $cs, $eip
+	x/i $cs*16+$eip
+end
 #intel syntax
 set disassembly-flavor intel
 #set to 16-bit
