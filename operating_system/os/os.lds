@@ -2,8 +2,7 @@ ENTRY(main);
 
 PHDRS
 {
-	headers PT_PHDR FILEHDR PHDRS;
-	code PT_LOAD PHDRS;
+	code PT_LOAD;
 }
 
 SECTIONS
