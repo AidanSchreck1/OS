@@ -1,17 +1,17 @@
-BUILD_DIR=../build
+BUILD_DIR=../build/os
 OS=$(BUILD_DIR)/os
 
 CFLAGS+=-ffreestanding -nostdlib -gdwarf-4 -m32 -ggdb3
 
 OS_SRCS := $(wildcard *.c)
-OS_OBJS := $(patsubst %.c, $(OS)/%.o, $(OS_SRCS))
+OS_OBJS := $(patsubst %.c, $(BUILD_DIR)/%.o, $(OS_SRCS))
 
+all: $(OS)
 
-all: $(OS_OBJS)
-
-$(OS)/%.o: %.c
+$(BUILD_DIR)/%.o: %.c
 	gcc $(CFLAGS) -c $< -o $@
-	ld -m elf_i386 -T os.lds $(OS_OBJS) -o $@.elf
 
+$(OS): $(OS_OBJS)
+	ld -m elf_i386 -T os.lds $(OS_OBJS) -o $@.elf
 clean: 
-	rm $(OS)/o*
+	rm $(BUILD_DIR)/o*
