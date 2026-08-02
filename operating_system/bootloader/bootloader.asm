@@ -45,7 +45,7 @@ boot: ; boot label, this is replaced with its current address
 	mov dl, 0x00 ; drive number
 
 	int 0x13 ; call the BIOS Routine
-	jmp 0x50:0x0 ; jump and execute the sector! address 0x500
+	jmp 0x600 ; jump and execute the sector! address 0x500
 	;******************************************
 
 
